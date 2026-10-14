@@ -1,0 +1,44 @@
+// api_usuarios.api - exemplo do domínio: endpoint HTTP com validação
+struct Usuario {
+    id: uuid,
+    nome: str,
+    idade: int,
+    saldo: decimal,
+}
+
+enum ErroApi {
+    NaoEncontrado,
+    Invalido(str),
+    Limite{ maximo: int, recebido: int },
+}
+
+val LIMITE_PAGINA: int = 1_000;
+val TAXA: double = 2.5e-3;
+val MASCARA: int = 0xFF;
+val FLAGS: int = 0b1010_0001;
+val SEPARADOR: char = ';';
+val CHECK: char = '\u{2713}';
+
+@get("/usuarios/{id}")
+def (id: uuid): Result[Usuario, ErroApi] {
+    match repo.buscar(id) {
+        Some(u) => { return Ok(u); },
+        None    => { return Err(ErroApi::NaoEncontrado); },
+    }
+}
+
+@get("/usuarios")
+def (pagina: int, tamanho: int): Result[list[Usuario], ErroApi] {
+    if tamanho <= 0 || tamanho > LIMITE_PAGINA {
+        return Err(ErroApi::Limite{ maximo: LIMITE_PAGINA, recebido: tamanho });
+    }
+    val todos: list[Usuario] = repo.listar();
+    val adultos: list[Usuario] = todos.filter((u: Usuario) -> u.idade >= 18);
+    val total: decimal = adultos.map((u: Usuario) -> u.saldo).sum();
+    log.info("pagina=" + str(pagina) + "\ttotal=\"" + str(total) + "\"");
+    foreach u in adultos {
+        if !(u.nome == "") && u.idade != 0 { log.debug(u.nome); } else { }
+    }
+    for i in 0..=10 { }
+    return Ok(adultos);
+}

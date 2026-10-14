@@ -1,0 +1,114 @@
+1_ex_erros_lexicos.api:2:14: erro léxico: literal inteiro '007' com zero à esquerda (não há octal; use 0x/0b ou remova o zero)
+1_ex_erros_lexicos.api:3:14: erro léxico: literal numérico malformado '12abc'
+1_ex_erros_lexicos.api:4:16: erro léxico: literal real malformado '3.14xyz'
+1_ex_erros_lexicos.api:5:14: erro léxico: literal inteiro '99999999999999999999' excede o tipo int (64 bits)
+1_ex_erros_lexicos.api:6:15: erro léxico: literal de caractere vazio
+1_ex_erros_lexicos.api:7:15: erro léxico: literal de caractere 'ab' deve conter exatamente um caractere (para texto use "...")
+1_ex_erros_lexicos.api:8:17: erro léxico: operador '<>' não existe na ApiLang; use '!='
+1_ex_erros_lexicos.api:9:17: erro léxico: operador '&' inválido; o E lógico é '&&'
+1_ex_erros_lexicos.api:10:5: erro léxico: 'preço': caracteres não-ASCII só são permitidos em strings, chars e comentários (identificadores usam [A-Za-z0-9_])
+1_ex_erros_lexicos.api:11:22: erro léxico: sequência de escape inválida '\q' em string
+1_ex_erros_lexicos.api:12:16: erro léxico: caractere inválido '#'
+1_ex_erros_lexicos.api:13:14: erro léxico: string não terminada (quebra de linha antes de fechar aspas)
+1_ex_erros_lexicos.api:14:17: erro léxico: comentário de bloco não terminado (aberto aqui)
+LIN:COL   TOKEN        LEXEMA / VALOR
+2:1       VAL          val
+2:5       IDENT        a
+2:6       COLON        :
+2:8       T_INT        int
+2:12      ASSIGN       =
+2:14      ERROR        (ver mensagem de erro)
+2:17      SEMICOLON    ;
+3:1       VAL          val
+3:5       IDENT        b
+3:6       COLON        :
+3:8       T_INT        int
+3:12      ASSIGN       =
+3:14      ERROR        (ver mensagem de erro)
+3:19      SEMICOLON    ;
+4:1       VAL          val
+4:5       IDENT        c
+4:6       COLON        :
+4:8       T_FLOAT      float
+4:14      ASSIGN       =
+4:16      ERROR        (ver mensagem de erro)
+4:23      SEMICOLON    ;
+5:1       VAL          val
+5:5       IDENT        d
+5:6       COLON        :
+5:8       T_INT        int
+5:12      ASSIGN       =
+5:14      ERROR        (ver mensagem de erro)
+5:34      SEMICOLON    ;
+6:1       VAL          val
+6:5       IDENT        e
+6:6       COLON        :
+6:8       T_CHAR       char
+6:13      ASSIGN       =
+6:15      ERROR        (ver mensagem de erro)
+6:17      SEMICOLON    ;
+7:1       VAL          val
+7:5       IDENT        f
+7:6       COLON        :
+7:8       T_CHAR       char
+7:13      ASSIGN       =
+7:15      ERROR        (ver mensagem de erro)
+7:19      SEMICOLON    ;
+8:1       VAL          val
+8:5       IDENT        g
+8:6       COLON        :
+8:8       T_BOOL       bool
+8:13      ASSIGN       =
+8:15      IDENT        a
+8:17      ERROR        (ver mensagem de erro)
+8:20      IDENT        b
+8:21      SEMICOLON    ;
+9:1       VAL          val
+9:5       IDENT        h
+9:6       COLON        :
+9:8       T_BOOL       bool
+9:13      ASSIGN       =
+9:15      IDENT        a
+9:17      ERROR        (ver mensagem de erro)
+9:19      IDENT        b
+9:20      SEMICOLON    ;
+10:1      VAL          val
+10:5      ERROR        (ver mensagem de erro)
+10:10     COLON        :
+10:12     T_INT        int
+10:16     ASSIGN       =
+10:18     INT_LIT      10           = 10
+10:20     SEMICOLON    ;
+11:1      VAL          val
+11:5      IDENT        i
+11:6      COLON        :
+11:8      T_STR        str
+11:12     ASSIGN       =
+11:14     STRING_LIT   "escape  inválido"
+11:34     SEMICOLON    ;
+12:1      VAL          val
+12:5      IDENT        j
+12:6      COLON        :
+12:8      T_INT        int
+12:12     ASSIGN       =
+12:14     INT_LIT      5            = 5
+12:16     ERROR        (ver mensagem de erro)
+12:18     IDENT        comentario
+12:29     IDENT        estilo
+12:36     IDENT        Python
+12:42     SEMICOLON    ;
+13:1      VAL          val
+13:5      IDENT        k
+13:6      COLON        :
+13:8      T_STR        str
+13:12     ASSIGN       =
+13:14     ERROR        (ver mensagem de erro)
+14:1      VAL          val
+14:5      IDENT        m
+14:6      COLON        :
+14:8      T_INT        int
+14:12     ASSIGN       =
+14:14     INT_LIT      1            = 1
+14:15     SEMICOLON    ;
+14:17     ERROR        (ver mensagem de erro)
+-- 99 tokens, 13 erro(s) léxico(s)

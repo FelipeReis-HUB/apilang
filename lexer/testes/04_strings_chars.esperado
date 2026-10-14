@@ -1,0 +1,15 @@
+LIN:COL   TOKEN        LEXEMA / VALOR
+1:1       STRING_LIT   ""
+1:4       STRING_LIT   "simples"
+1:14      STRING_LIT   "com \"aspas\" e \\ barra"
+1:41      STRING_LIT   "tab\tnova\nlinha"
+1:60      STRING_LIT   "acentuação ok"
+1:76      STRING_LIT   "😀"
+2:1       CHAR_LIT     'a'          = U+0061
+2:5       CHAR_LIT     ' '          = U+0020
+2:9       CHAR_LIT     '\n'         = U+000A
+2:14      CHAR_LIT     '\''         = U+0027
+2:19      CHAR_LIT     '"'          = U+0022
+2:23      CHAR_LIT     'ç'         = U+00E7
+2:27      CHAR_LIT     '\u{41}'     = U+0041
+-- 13 tokens, 0 erro(s) léxico(s)

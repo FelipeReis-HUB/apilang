@@ -1,0 +1,14 @@
+// erros_lexicos.api - cada linha abaixo contém um erro léxico
+val a: int = 007;
+val b: int = 12abc;
+val c: float = 3.14xyz;
+val d: int = 99999999999999999999;
+val e: char = '';
+val f: char = 'ab';
+val g: bool = a <> b;
+val h: bool = a & b;
+val preço: int = 10;
+val i: str = "escape \q inválido";
+val j: int = 5 # comentario estilo Python;
+val k: str = "string sem fim;
+val m: int = 1; /* comentário /* aninhado */ sem fechar

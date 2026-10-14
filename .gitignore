@@ -1,0 +1,4 @@
+# artefatos de build do lexer
+lexer/apilex
+lexer/lex.yy.c
+lexer/testes/*.out

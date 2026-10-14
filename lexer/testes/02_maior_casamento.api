@@ -1,0 +1,2 @@
+for foreach forx in index if_ iff else elses
+a==b a=b a=>b a->b a-b a<=b a<b a!=b !a a::B a..b a..=b a.b

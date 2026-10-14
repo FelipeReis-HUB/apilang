@@ -1,0 +1,26 @@
+LIN:COL   TOKEN        LEXEMA / VALOR
+1:1       VAL          val
+1:5       IDENT        x
+1:6       COLON        :
+1:8       T_INT        int
+1:12      ASSIGN       =
+1:14      INT_LIT      1            = 1
+1:15      SEMICOLON    ;
+4:1       VAL          val
+4:5       IDENT        y
+4:6       COLON        :
+4:8       T_INT        int
+4:12      ASSIGN       =
+4:14      INT_LIT      2            = 2
+4:15      SEMICOLON    ;
+4:60      VAL          val
+4:64      IDENT        z
+4:65      COLON        :
+4:67      T_INT        int
+4:71      ASSIGN       =
+4:73      INT_LIT      3            = 3
+4:74      SEMICOLON    ;
+5:1       IDENT        a
+5:3       SLASH        /
+5:5       IDENT        b
+-- 24 tokens, 0 erro(s) léxico(s)

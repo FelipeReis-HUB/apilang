@@ -1,0 +1,27 @@
+06_erros.api:1:14: erro léxico: literal inteiro '08' com zero à esquerda (não há octal; use 0x/0b ou remova o zero)
+06_erros.api:2:9: erro léxico: literal numérico malformado '1e'
+06_erros.api:3:1: erro léxico: literal de caractere não terminado
+06_erros.api:4:1: erro léxico: string não terminada (quebra de linha antes de fechar aspas)
+LIN:COL   TOKEN        LEXEMA / VALOR
+1:1       VAL          val
+1:5       IDENT        x
+1:6       COLON        :
+1:8       T_INT        int
+1:12      ASSIGN       =
+1:14      ERROR        (ver mensagem de erro)
+1:16      SEMICOLON    ;
+2:1       VAL          val
+2:5       IDENT        y
+2:7       ASSIGN       =
+2:9       ERROR        (ver mensagem de erro)
+2:11      SEMICOLON    ;
+3:1       ERROR        (ver mensagem de erro)
+4:1       ERROR        (ver mensagem de erro)
+5:1       VAL          val
+5:5       IDENT        ok
+5:7       COLON        :
+5:9       T_INT        int
+5:13      ASSIGN       =
+5:15      INT_LIT      1            = 1
+5:16      SEMICOLON    ;
+-- 21 tokens, 4 erro(s) léxico(s)

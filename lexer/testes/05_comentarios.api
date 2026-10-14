@@ -1,0 +1,5 @@
+val x: int = 1; // comentário de linha com "aspas" e /* não abre bloco
+/* bloco
+   em várias linhas */
+val y: int = 2; /* externo /* aninhado */ ainda externo */ val z: int = 3;
+a / b // divisão seguida de comentário

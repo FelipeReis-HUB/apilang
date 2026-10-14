@@ -1,0 +1,50 @@
+/*
+ * quicksort.api - lê uma lista de inteiros do usuário,
+ * ordena com Quicksort (partição de Lomuto) e exibe o resultado.
+ */
+import io;
+
+def trocar(v: list[int], i: int, j: int): list[int] {
+    val tmp: int = v[i];
+    v[i] = v[j];
+    v[j] = tmp;
+    return v;
+}
+
+def particionar(v: list[int], ini: int, fim: int): int {
+    val pivo: int = v[fim];
+    var i: int = ini - 1;
+    for j in ini..fim {          // j = ini, ..., fim - 1
+        if v[j] <= pivo {
+            i = i + 1;
+            trocar(v, i, j);
+        }
+    }
+    trocar(v, i + 1, fim);
+    return i + 1;
+}
+
+def quicksort(v: list[int], ini: int, fim: int): list[int] {
+    if ini < fim {
+        val p: int = particionar(v, ini, fim);
+        quicksort(v, ini, p - 1);
+        quicksort(v, p + 1, fim);
+    }
+    return v;
+}
+
+pub def main(): int {
+    io.print("Quantos números? ");
+    val n: int = match io.read_int() {
+        Ok(x)  => x,
+        Err(e) => { io.print("entrada inválida\n"); return 1; },
+    };
+    var numeros: list[int] = [];
+    for k in 0..n {
+        io.print("numero " + str(k + 1) + ": ");
+        numeros = numeros + [io.read_int()?];
+    }
+    val ordenados: list[int] = quicksort(numeros, 0, n - 1);
+    io.print("Ordenado: " + str(ordenados) + "\n");
+    return 0;
+}
